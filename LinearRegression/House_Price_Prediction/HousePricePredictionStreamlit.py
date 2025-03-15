@@ -8,7 +8,9 @@ a=st.number_input("Enter Area(sq.ft.):",value=1500)
 b=st.number_input("Enter No of Bedrooms:",value=4)
 c=st.number_input("Enter No of Bathrooms:",value=3)
 
-with open('resources/Reverse_mapping.plk','rb') as f:
+
+Option_PATH = "resources/Reverse_mapping.pkl"
+with open(Option_PATH,'rb') as f:
     reverse_mapping=dict(pickle.load(f))
 City_list1= list(reverse_mapping.keys())
 
@@ -19,7 +21,8 @@ d=reverse_mapping.get(d,None)
 UserInput=[a,b,c,d] 
 
 if st.button("Predict", type='secondary'):
-    HousePricePredictionModel=joblib.load('resources/HousePricePredictionModel.plk')
+    MODEL_PATH = 'resources/HousePricePredictionModel.plk'
+    HousePricePredictionModel=joblib.load(MODEL_PATH)
     Pred_price=HousePricePredictionModel.predict([UserInput])
 
     st.write("---------------------------------------------------------------------")

@@ -9,5 +9,3 @@ scikit-learn==1.6.1
 streamlit==1.43.2
 
 tzdata==2025.1
-
-pickle5==0.0.11

@@ -1,0 +1,11 @@
+
+numpy==2.2.3
+pandas==2.2.3
+
+pillow==11.1.0
+
+scikit-learn==1.6.1
+
+streamlit==1.43.2
+
+tzdata==2025.1

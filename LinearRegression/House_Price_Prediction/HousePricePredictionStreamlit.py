@@ -2,10 +2,17 @@ import streamlit as st
 import pickle,joblib
 from sklearn.linear_model import LinearRegression
 
+import os
+os.makedirs("resources", exist_ok=True)
+
+MODEL_PATH="resources/HousePricePredictionModel.plk"
+MAPPING_CITY_PATH="resources/Reverse_mapping.plk"
+MODEL_DETAIL_PATH="resources/model_currectness_value.plk"
+
 
 st.title('The House Price Prediction Model: ')
 
-with open("resources/model_currectness_value.plk",'rb') as x:
+with open(MODEL_DETAIL_PATH,'rb') as x:
     detail=dict(pickle.load(x))
 
 with st.expander("Click to see Model details"):
@@ -21,7 +28,7 @@ c=st.number_input("Enter No of Bathrooms:",value=3)
 
 
 
-with open("resources/Reverse_mapping.plk",'rb') as f:
+with open(MAPPING_CITY_PATH,'rb') as f:
     reverse_mapping=dict(pickle.load(f))
 City_list1= list(reverse_mapping.keys())
 
@@ -37,7 +44,7 @@ UserInput=[a,b,c,d]
 
 if st.button("Predict", type='secondary'):
 
-    HousePricePredictionModel=joblib.load('resources/HousePricePredictionModel.plk')
+    HousePricePredictionModel=joblib.load(MODEL_PATH)
     Pred_price=HousePricePredictionModel.predict([UserInput])
 
     

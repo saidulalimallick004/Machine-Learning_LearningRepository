@@ -6,7 +6,11 @@
     "codespaces": {
       "openFiles": [
         "README.md",
-        "LinearRegression/House_Price_Prediction/HousePricePredictionStreamlit.py"
+        "LinearRegression/House_Price_Prediction/HousePricePredictionStreamlit.py",
+        "LinearRegression/House_Price_Prediction/resources/Reverse_mapping.plk",
+        "LinearRegression/House_Price_Prediction/resources/HousePricePredictionModel.plk",
+        "LinearRegression/House_Price_Prediction/resources/model_currectness_value.plk"
+        
       ]
     },
     "vscode": {
